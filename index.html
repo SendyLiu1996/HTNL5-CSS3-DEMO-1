@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的第一个页面</title>
+    <style>
+        body {
+            background: #add;
+        }
+
+        * {
+            /* 改变盒模型 */
+            box-sizing: border-box;
+            /* 干掉页边距 */
+            padding: 0;
+            margin: 0;
+        }
+
+        @keyframes x {
+
+            /* 从不转到转360度 */
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+
+
+        #八卦 {
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+            /* 设置动画,x是对动画的声明，10s是动画时间,infinite时期一直转，linear使其线性转 */
+            animation: x 10s infinite linear;
+            /* 阴影，使用box shadow generater（在线工具）生成 */
+            box-shadow: 0px 0px 5px 4px rgba(0, 0, 0, 0.75);
+        }
+
+        /* 媒体查询，当你的页面小于等于括号属性时，额外添加一些属性 */
+        @media(max-width: 500px) {
+            #八卦 {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        [id=八卦]>div:first-child {
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            background: black;
+        }
+
+        #八卦>div:nth-child(2) {
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            background: white;
+        }
+
+        #八卦>div:nth-child(3) {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            /* 左起移动50% */
+            left: 50%;
+            /* 回退100像素 */
+            margin-left: -100px;
+            border-radius: 50%;
+            background: black;
+        }
+
+        @media(max-width: 500px) {
+            #八卦>div:nth-child(3) {
+                width: 100px;
+                height: 100px;
+                margin-left: -50px;
+
+            }
+        }
+
+        #八卦>div:nth-child(4) {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            left: 50%;
+            bottom: 0;
+            margin-left: -100px;
+            border-radius: 50%;
+            background: white;
+        }
+
+        @media(max-width: 500px) {
+            #八卦>div:nth-child(4) {
+                width: 100px;
+                height: 100px;
+                margin-left: -50px;
+            }
+        }
+
+        #八卦>div:nth-child(5) {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            /* 左起移动50% */
+            left: 50%;
+            top: 75px;
+            margin-left: -25px;
+            /* 回退100像素 */
+            border-radius: 50%;
+            background: white;
+        }
+
+        @media(max-width: 500px) {
+            #八卦>div:nth-child(5) {
+                width: 25px;
+                height: 25px;
+                top: 37.5px;
+                margin-left: -12.5px;
+            }
+        }
+
+        #八卦>div:nth-child(6) {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            /* 左起移动50% */
+            left: 50%;
+            bottom: 75px;
+            margin-left: -25px;
+            /* 回退100像素 */
+            border-radius: 50%;
+            background: black;
+        }
+
+        @media(max-width: 500px) {
+            #八卦>div:nth-child(6) {
+                width: 25px;
+                height: 25px;
+                bottom: 37.5px;
+                margin-left: -12.5px;
+            }
+        }
+
+        #八卦-wrapper {
+            /* vh = viewpoin height */
+            height: 100vh;
+            /* 宽度会自适应 */
+            /* 让八卦剧中 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* 把横向一字排（默认
+            ）改为竖向一字排开 */
+            flex-direction: column;
+        }
+
+        #八卦-描述 {
+            /* 上边距----一个字符（em） */
+            margin-top: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="八卦-wrapper">
+        <div id="八卦">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div id="八卦-描述">
+            道可道，非常道
+        </div>
+    </div>
+</body>
+
+</html>
